@@ -192,7 +192,7 @@ nav {
 }
 
 /* Apply styles for screens of 480px or more in width */
-@media (max-width: 480px) {                                     /* Max before transition 516 + 220 */
+@media (max-width: 480px) {                                     /* Working */
     .columnL {
         width: calc(60% - 1px) !important;
         background-color: lightgreen !important;
@@ -204,7 +204,7 @@ nav {
 }
 
 /* Adjust layout for smaller screen widths */
-@media (min-width: 481px) and (max-width: 755px) {              /* All other sizes */
+@media (min-width: 481px) and (max-width: 746px) {              /* Working */
     .columnL {
         width: calc(70% - 1px) !important;
         background-color: lightyellow !important;
@@ -216,7 +216,7 @@ nav {
 }
 
 /* Adjust layout for half-screen widths */
-@media (min-width: 756px) and (max-width: 1920px) {
+@media (min-width: 747px) and (max-width: 1051px) {             /* Max before transition 516 + 220 */
     .columnL {
         width: calc(70% - 1px) !important;
         background-color: lightpink !important;
@@ -229,7 +229,7 @@ nav {
 }
 
 /* Adjust layout for full-screen widths */
-@media (min-width: 1921px) and (max-width: 3840px) {
+@media (min-width: 1051px) and (max-width: 1536px) {
     .columnL {
         width: calc(80% - 1px) !important;
         background-color: lightblue !important;
