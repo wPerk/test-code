@@ -191,51 +191,37 @@ nav {
     color: blue;
 }
 
-/* Apply styles for screens of 480px or more in width */
-@media (max-width: 480px) {                                     /* Working */
-    .columnL {
-        width: calc(60% - 1px) !important;
-        background-color: lightgreen !important;
-    }
-    .columnR {
-        width: calc(40% - 1px) !important;
-        background-color: lightgreen !important;
+/* === Phone Portrait (Galaxy S23+ portrait) === */
+@media (max-width: 600px) and (orientation: portrait) {
+    .columnL, .columnR {
+        background-color: lightgreen;
     }
 }
 
-/* Adjust layout for smaller screen widths */
-@media (min-width: 481px) and (max-width: 746px) {              /* Working */
-    .columnL {
-        width: calc(70% - 1px) !important;
-        background-color: lightyellow !important;
-    }
-    .columnR {
-        width: calc(30% - 1px) !important;
-        background-color: lightyellow !important;
+/* === Phone Landscape === */
+@media (max-width: 900px) and (orientation: landscape) {
+    .columnL, .columnR {
+        background-color: lightyellow;
     }
 }
 
-/* Adjust layout for half-screen widths */
-@media (min-width: 747px) and (max-width: 1051px) {             /* Max before transition 516 + 220 */
-    .columnL {
-        width: calc(70% - 1px) !important;
-        background-color: lightpink !important;
-    }
-
-    .columnR {
-        width: calc(30% - 1px) !important;
-        background-color: lightpink !important;
+/* === Laptop - Quarter Screen Width (estimated <800px) === */
+@media (min-width: 601px) and (max-width: 900px) and (orientation: portrait) {
+    .columnL, .columnR {
+        background-color: lightsalmon;
     }
 }
 
-/* Adjust layout for full-screen widths */
-@media (min-width: 1051px) and (max-width: 1536px) {
-    .columnL {
-        width: calc(80% - 1px) !important;
-        background-color: lightblue !important;
+/* === Laptop Half-Screen Width (901px - 1400px) === */
+@media (min-width: 901px) and (max-width: 1400px) {
+    .columnL, .columnR {
+        background-color: lightpink;
     }
-    .columnR {
-        width: calc(20% - 1px) !important;
-        background-color: lightblue !important;
+}
+
+/* === Laptop Full-Screen Width (>1400px) === */
+@media (min-width: 1401px) {
+    .columnL, .columnR {
+        background-color: lightblue;
     }
 }
