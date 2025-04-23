@@ -1,37 +1,37 @@
-/* Reset some basic styles */
+/* General Reset */
+/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+
 html, body {
-    background-color: #dbdbdb;                  /* Sets a light gray background */
-    color: #333;                                /* Sets a dark gray text color for readability */
-    font-family: Verdana, sans-serif;           /* Sets a clean, sans-serif font for */
-    padding: 0;                                 /* Removes default padding around the page */
-    margin: 0;                                  /* Removes default padding around the page */
+/*  font-family: Verdana, sans-serif;
+    background-color: #222;
+    color: #ddd;
+    line-height: 1.6;   */
+
+    /*overflow-x: hidden;*/
+    background-color: #dbdbdb;                              /* Sets a light gray background */
+    color: #333;                                            /* Sets a dark gray text color for readability */
+    font-family: Verdana, sans-serif;                       /* Sets a clean, sans-serif font for */
+    padding: 0;                                             /* Removes default padding around the page */
+    margin: 0;                                              /* Removes default padding around the page */
+    height: 100%;
 }
 
 header {
-    background-color: #444;                     /* Sets a gray background for the header */
-    color: white;                               /* Makes the text color white for contrast */
-    text-align: center;                         /* Centers the header content */
-    padding: 30px 20px;                         /* Adds spacing inside the header */
-    font-size: 24px;                            /* Increases font size for better visibility */
-}
-
-main {
-
-}
-
-footer {
-    background-color: #444;                     /* Sets a dark background color for the footer */
-    color: white;                               /* Makes the footer text white */
-    text-align: center;                         /* Centers the text in the footer */
-    padding: 5px 0;                             /* Adds vertical padding inside the footer */
-    margin-top: 20px;                           /* Adds space above the footer */
-    position: relative;                         /* Place the footer in its position relative to its "normal flow" position */
+    background-color: #444;                                 /* Sets a gray background for the header */
+    color: white;                                           /* Makes the text color white for contrast */
+    text-align: center;                                     /* Centers the header content */
+    padding: 1.875rem 1.25rem;                                     /* Adds spacing inside the header */
+    font-size: 24px;                                        /* Increases font size for better visibility */
 }
 
 /* Navbar Properties */
 nav {
     background-color: #444;                                 /* Set background color for navigation */
-    padding: 10px;                                          /* Add padding to navigation */
+    padding: 0.625rem;                                      /* Add padding to navigation */
     z-index: 10;
 }
     nav ul {
@@ -42,8 +42,8 @@ nav {
         justify-content: space-between;                     /* Align items to the sides */
     }
         nav ul li {
-            padding: 5px 10px;                              /* Add padding around each navigation item */
-            border-right: 1px solid #999;                   /* Add vertical line between items */
+            padding: 0.3125rem 0.625rem;                              /* Add padding around each navigation item */
+            border-right: 0.0625rem solid #999;                   /* Add vertical line between items */
             flex-grow: 1;                                   /* Equal spacing for all items */
         }
             nav ul li:last-child {
@@ -61,10 +61,10 @@ nav {
     background-color: #222;                                 /* Set background color for navbar */
     color: #fff;                                            /* Set text color for navbar */
     display: flex;                                          /* Use flexbox for layout */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);           /* Optional: Add shadow for the menu */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);           /* Optional: Add shadow for the menu */
     justify-content: space-between;                         /* Align items to the sides */
     align-items: center;                                    /* Align items vertically */
-    padding: 10px 20px;                                     /* Add padding to navbar */
+    padding: 0.625rem 1.25rem;                                     /* Add padding to navbar */
     position: sticky;                                       /* Make navbar sticky */
     top: 0;                                                 /* Stick it to the top of the viewport */
     z-index: 10;
@@ -75,24 +75,24 @@ nav {
     width: 100%;                                            /* Set width for progress container */
     background-color: #f1f1f1;                              /* Set background color for progress container to white */
     position: sticky;                                       /* Make progress container sticky */
-    top: 50px;                                              /* Stick it to the top of the viewport */
+    top: 3.125rem;                                              /* Stick it to the top of the viewport */
     z-index: 10;
 }
 .progress-bar {
-    height: 5px;                                            /* Set height for progress bar */
+    height: 0.3125rem;                                            /* Set height for progress bar */
     width: 0;                                               /* Initial width for progress bar */
     background-color: #4caf50;                              /* Set background color for progress bar to green */
     margin-top: 0;                                          /* Remove top margin for progress bar */
     position: sticky;                                       /* Make progress bar sticky */
-    top: 50px;                                              /* Stick it to the top of the viewport */
+    top: 3.125rem;                                              /* Stick it to the top of the viewport */
     z-index: 10;
 }
 
 /* Menu icon */
 .menu-icon {
     position: absolute;
-    top: 7.5px;
-    right: 14px;
+    top: 0.4688rem;
+    right: 0.875rem;
     font-size: 24px;                                        /*Set font size for menu icon */
     cursor: pointer;                                        /*Set cursor to pointer for interaction */
     z-index: 10;
@@ -106,7 +106,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 0.625rem;
     background-color: #222;
     color: white;
 }
@@ -114,7 +114,7 @@ nav {
 /* Dropdown list styling */
 .dropdown {                                                 /* .dropdown = .menu from My First Website */
     position: absolute;                                     /* Position menu absolute */
-    top: 55px;                                              /* Align menu from top */
+    top: 3.4375rem;                                              /* Align menu from top */
     right: 0;                                               /* Align menu from right */
     height: auto;                                           /* Set height to auto */
     background-color: #f9f9f9;                              /* Set background color for menu */
@@ -128,9 +128,16 @@ nav {
     border: 1px solid #ccc;                                 /* Add border for the sub-list */
     z-index: 10;                                            /* Set z-index for stacking order */
 }
+@media (max-width: 600px) {
+    .dropdown {
+        width: 100vw;
+        right: 0;
+        left: 0;
+    }
+}
     /* Dropdown list items */
     .dropdown li {
-        padding: 10px;                                      /* Add padding for menu items */
+        padding: 0.625rem;                                      /* Add padding for menu items */
         position: relative;
         text-align: left;                                   /* Align text to left */
         border-right: 1px solid #ccc;                       /* Add border between items */
@@ -142,86 +149,84 @@ nav {
         .dropdown a {
             color: black;                                   /* Set text color for menu links */
             text-decoration: none;                          /* Remove underline from menu links */
-            padding: 10px;                                  /* Add padding for better clickability */
+            padding: 0.625rem;                                  /* Add padding for better clickability */
             width: 100%;                                    /* Set full width for clickable area */
             display: block;                                 /* Make it block to take full width */
         }
 
+/* Main Content */
 .main-content {
-    /*padding: 10px;*/                              /* Adds space inside the main content area */
-    height: 100vh;                              /* Ensures that the main class fills the whole screen */
-    width: 100vw;                               /* Ensures that the main class fills the whole screen */
-    display: flex;                              /* Allows a flexible box to fill the parent container's alotted space */
-    flex-direction: column;                     /* Box is designated to fill or flex vertically */
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.content-container {
+.intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+    .intro h2 {
+        font-size: 1.75rem;
+        color: #eee;
+    }
+
+.sections {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 100%;
-    height: 100vh;                              /* Make the container fill the viewport height */
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.columnL {
-    width: calc(80% - 1px);
-    height: auto;
-    border: 1px solid #ccc;                     /* Add a border for visual separation */
-    margin: 5px;
-    box-sizing: border-box;
-    flex-direction: column;                     /* Box is designated to fill or flex vertically */
-    outline: 1px solid green;
-}
-.columnR {
-    width: calc(20% - 1px);
-    height: auto;
-    border: 1px solid #ccc;                     /* Add a border for visual separation */
-    margin: 5px;
-    box-sizing: border-box;
-    flex-direction: column;                     /* Box is designated to fill or flex vertically */
-    outline: 1px solid green;
+/* Cards */
+.card {
+    background-color: #333;
+    padding: 1.5rem;
+    border: 2px solid #555;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
-.underline {
-    text-decoration-line: underline;
-}
-
-#size-display-left, #size-display-right {
-    font-weight: bold;
-    color: blue;
-}
-
-/* === Phone Portrait (Galaxy S23+ portrait) === */
-@media (max-width: 600px) and (orientation: portrait) {
-    .columnL, .columnR {
-        background-color: lightgreen;
+    .card h3 {
+        margin-bottom: 0.75rem;
+        font-size: 1.3rem;
+        color: #fff;
     }
-}
 
-/* === Phone Landscape === */
-@media (max-width: 900px) and (orientation: landscape) {
-    .columnL, .columnR {
-        background-color: lightyellow;
+    .card a {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #555;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background-color 0.3s;
     }
+
+        .card a:hover {
+            background-color: #777;
+        }
+
+/* Footer */
+footer {
+    margin-top: 3rem;
+    background-color: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
 }
 
-/* === Laptop - Quarter Screen Width (estimated <800px) === */
-@media (min-width: 601px) and (max-width: 900px) and (orientation: portrait) {
-    .columnL, .columnR {
-        background-color: lightsalmon;
+/* Responsiveness */
+@media (min-width: 600px) {
+    .sections {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
-}
 
-/* === Laptop Half-Screen Width (901px - 1400px) === */
-@media (min-width: 901px) and (max-width: 1400px) {
-    .columnL, .columnR {
-        background-color: lightpink;
-    }
-}
-
-/* === Laptop Full-Screen Width (>1400px) === */
-@media (min-width: 1401px) {
-    .columnL, .columnR {
-        background-color: lightblue;
+    .card {
+        flex: 1 1 30%;
     }
 }
