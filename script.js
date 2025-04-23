@@ -1,4 +1,3 @@
-/*document.addEventListener("DOMContentLoaded", function () {*/
 const menuIcon = document.querySelector('.menu-icon');
 const dropdown = document.querySelector('.dropdown');
 const progressBar = document.getElementById('myProgressBar');
@@ -16,20 +15,16 @@ function updateProgressBar() {                                                  
 }
 
 function updateContainerSizes() {
-    const leftContainer = document.querySelector(".columnL");
-    const rightContainer = document.querySelector(".columnR");
+    const contentContainer = document.querySelector(".content-container");
 
     // Get current dimensions
-    const leftRect = leftContainer.getBoundingClientRect();
-    const rightRect = rightContainer.getBoundingClientRect();
+    const contentRect = contentContainer.getBoundingClientRect();
 
     // Format as "width x height"
-    const leftSizeText = `${Math.round(leftRect.width)}px x ${Math.round(leftRect.height)}px`;
-    const rightSizeText = `${Math.round(rightRect.width)}px x ${Math.round(rightRect.height)}px`;
+    const contentSizeText = `${Math.round(contentRect.width)}px x ${Math.round(contentRect.height)}px`;
 
     // Display values inside the containers (or in a separate element)
-    document.getElementById("size-display-left").textContent = leftSizeText;
-    document.getElementById("size-display-right").textContent = rightSizeText;
+    document.getElementById("size-display-content").textContent = contentSizeText;
 }
 
 // Event listener for the menu icon click
@@ -46,20 +41,23 @@ document.addEventListener('click', function (event) {
 });
 
 window.onscroll = function () {
-    console.log('Scroll event triggered'); // Check if this logs
-    const progressBar = document.getElementById('myProgressBar');
+    const progressBar = document.getElementById("myProgressBar");
+
     if (progressBar) {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const progress = (scrollTop / scrollHeight) * 100;
-        progressBar.style.width = progress + '%';
+        const scrolled = (scrollTop / scrollHeight) * 100;
+
+        console.log("ScrollTop:", scrollTop);
+        console.log("ScrollHeight:", scrollHeight);
+        console.log("Scrolled %:", scrolled);
+
+        progressBar.style.width = scrolled + "%";
     } else {
-        console.error('Progress bar not found on this page.');
+        console.error("Progress bar with ID 'myProgressBar' not found on this page.");
     }
-    updateProgressBar();
 };
 
 // Run on page load and when the window resizes
 window.addEventListener("load", updateContainerSizes);
 window.addEventListener("resize", updateContainerSizes);
-/*});*/
